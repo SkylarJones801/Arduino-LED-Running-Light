@@ -1,46 +1,58 @@
-// Define the pins connected to the LEDs
-const int ledPins[] = {3, 4, 5, 6, 7, 8, 9};
-const int ledCount = sizeof(ledPins) / sizeof(ledPins[0]);
+# Running Light Project
 
-void setup() {
-  // Initialize each pin as an output
-  for (int i = 0; i < ledCount; i++) {
-    pinMode(ledPins[i], OUTPUT);
-  }
-}
+**Introduction**
 
-void loop() {
-  // Loop through and light up each LED individually
-  for (int i = 0; i < ledCount; i++) {
-    digitalWrite(ledPins[i], HIGH); // Turn on the current LED
-    delay(100);                     // Wait for 100 milliseconds
-    digitalWrite(ledPins[i], LOW);  // Turn off the current LED
-  }
-  delay(100); // Wait for 100 milliseconds
+The Running Light project is a simple electronic project based on the Arduino Uno that creates dynamic visual effects by sequentially lighting up and turning off LEDs. This project is not only suitable for beginners to learn how to control hardware with Arduino but also helps understand basic programming logic and circuit knowledge. 
 
-  // Turn on all LEDs simultaneously
-  for (int i = 0; i < ledCount; i++) {
-    digitalWrite(ledPins[i], HIGH); // Turn on all LEDs
-  }
-  delay(1000); // Wait for 1 second
+In this project, we will use 7 LEDs and write code to control them to light up in sequence, forming a flowing effect. This project can serve as an introductory practice for learning digital electronics and microcontroller programming.
 
-  // Turn off LEDs one by one
-  for (int i = 0; i < ledCount; i++) {
-    digitalWrite(ledPins[i], LOW); // Turn off the current LED
-    delay(100);                    // Wait for 100 milliseconds
-  }
-  delay(1000); // Wait for 1 second
+**Materials Needed:**
 
-  // Each LED lights up individually 3 times, with a 500ms interval
-  for (int i = 0; i < ledCount; i++) {
-    for (int j = 0; j < 3; j++) { // Each LED lights up 3 times
-      digitalWrite(ledPins[i], HIGH); // Turn on the current LED
-      delay(300);                    // Wait for 300 milliseconds
-      digitalWrite(ledPins[i], LOW);  // Turn off the current LED
-      delay(300);                    // Wait for 300 milliseconds
-    }
-  }
-  // Ensure there is a delay at the end of the loop to provide enough time before the next loop starts
-  delay(1000); // Wait for 1 second
-}# Arduino-LED-Running-Light
-Learn how to use online simulation to create a dynamic Arduino LED running light.
+* 1 x Arduino UNO board
+* 7 x LEDs
+* 7 x 220Ω resistors (one for each LED to limit the current flowing through the LED)
+* 1 x Breadboard (optional, for easy connections)
+* Assorted jumper wires (for connecting components)
+* ## Online Simulation
+
+Before building the hardware, it's recommended to create an online simulation to identify any potential issues in the circuit or code. 
+
+**Benefits of Online Simulation:**
+
+* Catch errors early in the development process
+* Test different configurations without needing physical components
+* Save time and resources
+
+**Using PCBX for Online Simulation (Optional):**
+
+This project can be simulated using online PCB simulation tools like PCBX. Joining the PCBX community allows you to simulate your projects for free.
+
+**Connection Steps:**
+
+**Connecting LEDs and Resistors:**
+
+1. **LEDs to Arduino:** Connect the long leg (anode) of each LED to a designated digital pin on the Arduino Uno (pins 3, 4, 5, 6, 7, 8, 9).
+2. **Resistors to LEDs:** Connect the short leg (cathode) of each LED to a 220Ω resistor.
+3. **Resistors to GND:** Connect the other end of each 220Ω resistor to the GND pin of the Arduino Uno.
+
+**Running Light Effects (Code Implementation):**
+
+The provided code utilizes the `loop()` function to implement various LED display modes:
+
+* **Individual Lighting:** Each LED lights up sequentially, staying on for 100 milliseconds before switching to the next LED.
+* **All On:** All LEDs illuminate simultaneously for 1 second.
+* **Individual Extinguishing:** Similar to individual lighting, LEDs turn off one by one, staying on for 100 milliseconds each.
+* **Individual Blinking:** Each LED blinks independently, turning on for 300 milliseconds three times with a 300-millisecond pause between blinks.
+
+*Note: The specific code implementation for these effects is not provided here. Refer to the provided code source for details.*
+
+**Looping the Effects:**
+
+After completing each mode, the program introduces a 1-second delay before repeating the entire sequence, creating a continuous loop.
+
+**Join the PCBX Community:**
+
+For free online simulation of your project, consider joining the PCBX community: https://www.pcbx.com/forum?mtm_campaign=E&mtm_kwd=git
+
+
+While the 3D simulation feature is still a work in progress, we would love to hear your suggestions and expectations. It's an open-source community; any sharing and feedback is welcome.Your feedback will help our engineering team enhance the platform and better serve our users.Thank you!
