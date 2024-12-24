@@ -26,6 +26,7 @@ Before building the hardware, it's recommended to create an online simulation to
 **Using PCBX for Online Simulation (Optional):**
 
 This project can be simulated using online PCB simulation tools like PCBX. Joining the PCBX community allows you to simulate your projects for free.
+![LED Running Light](images/LED Running Light.gif)
 
 **Connection Steps:**
 
